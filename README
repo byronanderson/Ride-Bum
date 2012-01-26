@@ -1,4 +1,42 @@
+Ride Bum
+
 25 January 2012
 This is an application meant to enable ride sharing for events.
 
 Made by the Los Angeles Ruby book study group: http://groups.google.com/group/laruby-books
+
+
+ride shares to special events - sports events, festivals, and the like
+ - unique trips
+
+as a logged in event planner >
+    Invites people
+    create an event - point B
+
+as a logged in user trip planner > 
+    create a trip- point a and point b - with set time for pickup
+        google map
+    move around people in cars
+
+as a member >
+  no I don't want to go ->
+    exit site :)
+  yes I want to go ->
+    drive - add a car to a trip
+        say how many free seats you have
+    ride - add yourself to a car in a trip
+        choose number of human bodies want to go on the trip
+    need a ride - waitlist
+        choose number of human bodies want to go on the trip
+
+
+
+
+future ideas >
+    webstalking
+    upvote/downvote users
+    baggage
+    expense planning
+    meal?
+    family stickers <----- profile pic/avatar
+    VIN <--- joke, haha :)
