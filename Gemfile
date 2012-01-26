@@ -21,6 +21,22 @@ group :assets do
 end
 
 gem 'jquery-rails'
+gem 'therubyracer'
+
+group :development do
+  gem "pry"
+end
+
+group :test do
+  gem "rspec-rails"
+  gem "cucumber-rails"
+  gem "database_cleaner"
+  gem "spork"
+  gem "guard-rspec"
+  gem "guard-livereload"
+  gem "guard-cucumber"
+  gem "guard-spork"
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
