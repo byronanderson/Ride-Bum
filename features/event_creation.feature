@@ -14,4 +14,4 @@ Feature: Event planner creates event
         And he enters the start date and time "2012-01-26 00:00:00"
         And he clicks on "Create"
         Then he sees "The event was created"
-        And he is on the event's page
+        And he is on the "Graveyard pitstop" event page

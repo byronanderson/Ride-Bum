@@ -16,6 +16,9 @@ Spork.prefork do
   # prefer to use XPath just remove this line and adjust any selectors in your
   # steps to use the XPath syntax.
   Capybara.default_selector = :css
+  # Make sure this require is after you require cucumber/rails/world.
+   require 'email_spec' # add this line if you use spork
+   require 'email_spec/cucumber'
 
 end
  
