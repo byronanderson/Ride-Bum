@@ -37,6 +37,7 @@ group :test do
   gem "guard-cucumber"
   gem "guard-spork"
   gem "email_spec"
+  gem "factory_girl_rails"
 end
 
 # To use ActiveModel has_secure_password
