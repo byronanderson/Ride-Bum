@@ -1,0 +1,16 @@
+// Place all the styles related to the pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#main_container {
+	margin-top: 50px;
+}
+.signin_form {
+	clear:right;
+	float: right;
+	height: 35px;
+	margin {
+		top: 0px;
+		bottom:0;
+	}
+	padding-top:5px;
+}
