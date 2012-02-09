@@ -1,5 +1,15 @@
 require 'spec_helper'
 
 describe Event do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context "Required fields" do
+    it "should require name" do
+      Factory.build(:event, name: nil).should_not be_valid
+    end
+    it "should require destination" do
+      Factory.build(:event, destination: nil).should_not be_valid
+    end
+    it "should require arrival time" do
+      Factory.build(:event, arrival_time: nil).should_not be_valid
+    end
+  end
 end

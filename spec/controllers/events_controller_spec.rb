@@ -24,7 +24,7 @@ describe EventsController do
   # Event. As you add validations to Event, be sure to
   # update the return value of this method accordingly.
   def valid_attributes
-    {}
+    { name: "Graveyard Run", destination: "Forest Lawn Cemetery", arrival_time: Time.now }
   end
   
   # This should return the minimal set of values that should be in the session
