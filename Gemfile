@@ -5,6 +5,8 @@ gem 'sqlite3'
 gem 'devise'
 gem 'jquery-rails'
 gem 'anjlab-bootstrap-rails', '>= 2.0', :require => 'bootstrap-rails'
+gem "draper"
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
@@ -28,7 +30,9 @@ group :test do
   gem "guard-cucumber"
   gem "guard-spork"
   gem "email_spec"
+  gem "factory_girl_rails"
 end
+
 group :production do
   gem 'therubyracer'
 end
