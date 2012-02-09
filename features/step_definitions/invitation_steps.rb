@@ -1,5 +1,5 @@
 Given /^he is on the "([^"]*)" event page$/ do |event_name|
-  visit Event.find_by_name(event_name)
+  visit event_path(Event.find_by_name(event_name))
 end
 
 When /^he types "([^"]*)" in the invitations field$/ do |text|

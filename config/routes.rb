@@ -1,4 +1,6 @@
 RideBum::Application.routes.draw do
+  resources :events
+
   get "dashboard/index"
 
   # The priority is based upon order of creation:
@@ -15,8 +17,6 @@ RideBum::Application.routes.draw do
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
   root to: "pages#index"
-
-  resources :events
   match "dashboard" => "dashboard#index"
 
   # Sample resource route with options:
