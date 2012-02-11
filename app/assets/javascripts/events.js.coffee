@@ -3,4 +3,6 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 
 $ ->
-  $("input#event_time").timepicker()
+  $("input#event_time").timepicker({
+    showPeriod: true
+  })
