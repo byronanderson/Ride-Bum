@@ -24,7 +24,7 @@ class EventsController < ApplicationController
   # GET /events/new
   # GET /events/new.json
   def new
-    @event = Event.new
+    @event = Event.new(arrival_time: 1.day.from_now)
 
     respond_to do |format|
       format.html # new.html.erb

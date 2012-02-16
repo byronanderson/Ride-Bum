@@ -26,14 +26,13 @@ When /^he enters the name "([^"]*)"$/ do |name|
 end
 
 When /^he enters the start date and time "([^"]*)"$/ do |datetime|
-
-  
   time = DateTime.parse(datetime)
-  select time.year.to_s,      from: "event[arrival_time(1i)]"
-  select time.strftime("%B"), from: "event[arrival_time(2i)]"
-  select time.day.to_s,       from: "event[arrival_time(3i)]"
-  select time.hour.to_s,      from: "event[arrival_time(4i)]"
-  select time.minute.to_s,    from: "event[arrival_time(5i)]"
+  fill_in "event_arrival_time", with: time.strftime("%m/%e/%Y %h:%m")
+  #select time.year.to_s,      from: "event[arrival_time(1i)]"
+  #select time.strftime("%B"), from: "event[arrival_time(2i)]"
+  #select time.day.to_s,       from: "event[arrival_time(3i)]"
+  #select time.hour.to_s,      from: "event[arrival_time(4i)]"
+  #select time.minute.to_s,    from: "event[arrival_time(5i)]"
   # datetime selection
 end
 

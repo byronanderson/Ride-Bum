@@ -10,4 +10,7 @@ class EventDecorator < Draper::Base
   def datetime
     [time, date].join(" on ")
   end
+  def arrival_time
+    read_attribute(:arrival_time).strftime("%m/%e/%Y %h:%m")
+  end
 end
