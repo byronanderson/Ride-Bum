@@ -1,5 +1,7 @@
 RideBum::Application.routes.draw do
-  resources :events
+  resources :events do
+    resources :invitations
+  end
 
   get "dashboard/index"
 
