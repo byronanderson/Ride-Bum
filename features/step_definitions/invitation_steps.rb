@@ -3,7 +3,9 @@ Given /^he is on the "([^"]*)" event page$/ do |event_name|
 end
 
 When /^he types "([^"]*)" in the invitations field$/ do |text|
-  fill_in "Invitations", with: text
+  @invitees ||= []
+  @invitees << text
+  fill_in "Invitations", with: @invitees.join("\n")
 end
 
 When /^clicks "([^"]*)"$/ do |text|
