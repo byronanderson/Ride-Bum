@@ -19,6 +19,7 @@ To install Ride Bum, you will first need to clone the git repository:
 Then you will need to update the submodules:
 
 `git submodule init`
+
 `git submodule update`
 
 Finally install the required gems:
