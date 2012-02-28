@@ -1,4 +1,6 @@
 RideBum::Application.routes.draw do
+  resources :invitations
+
   resources :events do
     resources :invitations
   end
