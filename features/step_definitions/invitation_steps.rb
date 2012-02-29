@@ -36,7 +36,8 @@ Given /^no invitation emails have been sent out$/ do
 end
 
 Given /^they have already received email invitations$/ do
-  pending("some thought on the matter of where that information will be stored")
-  @invitees.each do |invitee|
+  Invitation.all.each do |invitation|
+    invitation.email_sent = true
+    invitation.save
   end
 end

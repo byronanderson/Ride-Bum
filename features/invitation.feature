@@ -28,7 +28,8 @@ Feature: event planner invites potential attendees
             | Rob Zombie  | rob@zombie.com  | 9876543210 |
             | Greg Zombie | greg@zombie.com | 9876543211 |
         And no invitation emails have been sent out
-        When he clicks on "Send to All"
+        When he clicks on "Enter Guests"
+        And he clicks on "Send to All"
         Then "rob@zombie.com" should receive an email
         And "greg@zombie.com" should receive an email
 
@@ -38,7 +39,8 @@ Feature: event planner invites potential attendees
             | Rob Zombie  | rob@zombie.com  | 9876543210 |
             | Greg Zombie | greg@zombie.com | 9876543211 |
         And they have already received email invitations
-        When he clicks on "Send to All"
+        When he clicks on "Enter Guests"
+        And he clicks on "Send to All"
         Then "rob@zombie.com" should receive no email
         And "greg@zombie.com" should receive no email
 
@@ -53,7 +55,7 @@ Feature: event planner invites potential attendees
         And he fills in "Email" with "sarah@zombie.com"
         And he fills in "Phone" with "9876543212"
         And he clicks "Add"
-        Then he should see "Sarah Zombie as been added"
+        Then he should see "Sarah Zombie has been added"
         When he clicks on "Send to All"
         Then "rob@zombie.com" should receive no email
         And "greg@zombie.com" should receive no email

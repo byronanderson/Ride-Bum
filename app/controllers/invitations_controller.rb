@@ -80,4 +80,16 @@ class InvitationsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def send_emails
+    @event = Event.find(params[:event_id])
+    email_results = @event.invitations.unsent.map(&:send_email)
+    if email_results.any? { |result| not result }
+      #failure
+      redirect_to event_invitations_path(@event), notice: "Email Unsuccessful"
+    else
+      #success
+      redirect_to event_invitations_path(@event), notice: "Email Successful"
+    end
+  end
 end
