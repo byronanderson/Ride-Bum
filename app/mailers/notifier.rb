@@ -1,13 +1,8 @@
 class Notifier < ActionMailer::Base
-  default from: "from@example.com"
+  default from: "ridebum@therubyists.org"
 
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.notifier.invitation.subject
-  #
   def invitation(invitation)
-    @greeting = "Hi"
+    @invitation = invitation
 
     mail to: invitation.invitee_email
   end

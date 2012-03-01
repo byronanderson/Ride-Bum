@@ -3,6 +3,9 @@ require File.expand_path('../boot', __FILE__)
 require 'rails/all'
 require 'date'
 
+#http://blog.arconrad.com/?p=1282
+Dir.glob("./lib/*.{rb}").each { |file| require file }
+
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
   Bundler.require(*Rails.groups(:assets => %w(development test)))
