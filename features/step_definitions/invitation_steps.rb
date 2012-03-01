@@ -22,11 +22,12 @@ end
 
 Given /^the event has the following invitees:$/ do |table|
   # | name | email | phone |
-  pending("need to talk about user roles")
-  @invitees = table.hashes.map do |row|
-    invitee = Factory(:invitee)
-    Factory(:invitation, event: @event, invitee: invitee) #user??
-    invitee
+  table.hashes.each do |row|
+    #invitee = Factory(:invitee)
+    #Factory(:invitation, event: @event, invitee: invitee) #user??
+    #could say that invitation has_one invitee, and separate them into different tables even if you don't want to explicitly save an invitee as a user for later
+    Factory(:invitation, event: @event, invitee_name: row[:name], invitee_email: row[:email], invitee_phone: row[:phone])
+    #invitee
   end
 end
 
@@ -35,7 +36,8 @@ Given /^no invitation emails have been sent out$/ do
 end
 
 Given /^they have already received email invitations$/ do
-  pending("some thought on the matter of where that information will be stored")
-  @invitees.each do |invitee|
+  Invitation.all.each do |invitation|
+    invitation.email_sent = true
+    invitation.save
   end
 end

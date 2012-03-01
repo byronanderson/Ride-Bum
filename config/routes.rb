@@ -1,6 +1,10 @@
 RideBum::Application.routes.draw do
+  resources :invitations
+
   resources :events do
-    resources :invitations
+    resources :invitations do
+      get :send_emails, on: :collection
+    end
   end
 
   get "dashboard/index"

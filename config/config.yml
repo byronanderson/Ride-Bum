@@ -1,0 +1,15 @@
+development:
+  domain_name: http://localhost:3000
+  host: localhost:3000
+
+test:
+  domain_name: http://localhost:3000
+  host: localhost:3000
+
+staging:
+  domain_name: 
+  host: 
+
+production:
+  domain_name: 
+  host: 

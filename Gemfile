@@ -28,9 +28,12 @@ group :development do
   gem "pry"
 end
 
-group :test do
+group :test, :development do
   gem "rspec-rails"
   gem "cucumber-rails"
+end
+
+group :test do
   gem "database_cleaner"
   gem "spork"
   gem "guard-rspec"
