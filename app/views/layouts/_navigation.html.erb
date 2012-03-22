@@ -1,0 +1,27 @@
+<div class="navbar navbar-fixed-top">
+	<div class="navbar-inner">
+		<div class="container">
+			<div class="nav-collapse">
+				<ul class="nav">
+					<li class="<%= 'active' if current_page?(root_path) %>">
+						<%= link_to "Ride-Bum",  root_path %>
+					</li>
+					<li class="divider-vertical"></li>
+					<% if signed_in? %>
+						<li><%= link_to "Logout",  destroy_user_session_path, method: :delete %></li>
+					<% end -%>
+				</ul>
+
+				<% if not signed_in? %>
+		      <div class="signin_form">
+		        <%= form_for("user", url: user_session_path, class: "form-inline") do |f| %>
+		          <%= f.text_field :login %>
+		          <%= f.password_field :password %>
+		          <%= f.submit "Log in", id: "submit_button"%>
+		        <% end -%>
+		     	</div>
+     		<% end -%>
+			</div>
+		</div>
+	</div>
+</div>
