@@ -4,6 +4,6 @@ class Notifier < ActionMailer::Base
   def invitation(invitation)
     @invitation = invitation
 
-    mail to: invitation.invitee_email
+    mail to: invitation.user.email
   end
 end

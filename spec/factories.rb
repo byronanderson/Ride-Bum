@@ -5,15 +5,21 @@ FactoryGirl.define do
   factory :event do
     name "MyString"
     destination "MyString"
-    arrival_time "2012-02-08 20:06:34"
+    arrival_time { 2.days.from_now }
   end
   factory :invitation do
-    sequence :invitee_name, 1000 do
+    user
+    event
+  end
+  factory :user do
+    sequence :phone, 1000000000 do |n|
+      n.to_s
+    end
+    email { "#{username}@example.com" }
+    sequence :username, 1000 do
       "username_#{n}"
     end
-    invitee_email { "#{invitee_name}@example.com" }
-    sequence :invitee_phone, 1000000000 do |n|
-      n
-    end
+    password { "abc123" }
+    password_confirmation { "abc123" }
   end
 end

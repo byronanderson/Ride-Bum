@@ -11,18 +11,20 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :invitee_name, "Name" %><br />
-    <%= f.text_field :invitee_name %>
-  </div>
-  <div class="field">
-    <%= f.label :invitee_email, "Email" %><br />
-    <%= f.text_field :invitee_email %>
-  </div>
-  <div class="field">
-    <%= f.label :invitee_phone, "Phone" %><br />
-    <%= f.text_field :invitee_phone %>
-  </div>
+  <%= f.fields_for :user do |nested_form| %>
+    <div class="field">
+      <%= nested_form.label :username, "Name" %><br />
+      <%= nested_form.text_field :username %>
+    </div>
+    <div class="field">
+      <%= nested_form.label :email, "Email" %><br />
+      <%= nested_form.text_field :email %>
+    </div>
+    <div class="field">
+      <%= nested_form.label :phone, "Phone" %><br />
+      <%= nested_form.text_field :phone %>
+    </div>
+  <% end %>
   <%= f.hidden_field :event_id %>
   <div class="actions">
     <%= f.submit "Add" %>

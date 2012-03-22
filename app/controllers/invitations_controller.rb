@@ -24,7 +24,7 @@ class InvitationsController < ApplicationController
   # GET /invitations/new
   # GET /invitations/new.json
   def new
-    @invitation = Invitation.new(event: Event.find(params[:event_id]))
+    @invitation = Invitation.new(event: Event.find(params[:event_id]), user: User.new)
 
     respond_to do |format|
       format.html # new.html.erb

@@ -13,9 +13,9 @@
 
 <% @invitations.each do |invitation| %>
   <tr>
-    <td><%= invitation.invitee_name %></td>
-    <td><%= invitation.invitee_email %></td>
-    <td><%= invitation.invitee_phone %></td>
+    <td><%= invitation.user.username %></td>
+    <td><%= invitation.user.email %></td>
+    <td><%= invitation.user.phone %></td>
     <td><%= invitation.event_id %></td>
     <td><%= link_to 'Show', invitation %></td>
     <td><%= link_to 'Edit', edit_invitation_path(invitation) %></td>
