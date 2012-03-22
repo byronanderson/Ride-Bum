@@ -44,7 +44,7 @@ class InvitationsController < ApplicationController
 
     respond_to do |format|
       if @invitation.save
-        format.html { redirect_to new_event_invitation_path(@invitation.event, Invitation.new(event: @invitation.event)), notice: "#{@invitation.invitee_name} has been added" }
+        format.html { redirect_to new_event_invitation_path(@invitation.event, Invitation.new(event: @invitation.event)), notice: "#{@invitation.user.username} has been added" }
         format.json { render json: @invitation, status: :created, location: @invitation }
       else
         format.html { render action: "new" }
