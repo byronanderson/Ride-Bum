@@ -17,17 +17,13 @@ Then /^he should see "([^"]*)"$/ do |text|
 end
 
 Given /^there is a "([^"]*)" event$/ do |event_name|
-  @event = Factory(:event, name: event_name)
+  @event = FactoryGirl.create(:event, name: event_name)
 end
 
 Given /^the event has the following invitees:$/ do |table|
   # | name | email | phone |
   table.hashes.each do |row|
-    #invitee = Factory(:invitee)
-    #Factory(:invitation, event: @event, invitee: invitee) #user??
-    #could say that invitation has_one invitee, and separate them into different tables even if you don't want to explicitly save an invitee as a user for later
-    Factory(:invitation, event: @event, user: Factory(:user, username: row[:name], email: row[:email], phone: row[:phone]))
-    #invitee
+    FactoryGirl.create(:invitation, event: @event, user: FactoryGirl.create(:user, username: row[:name], email: row[:email], phone: row[:phone]))
   end
 end
 
