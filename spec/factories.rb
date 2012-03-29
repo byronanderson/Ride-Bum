@@ -1,6 +1,8 @@
 FactoryGirl.define do
   factory :event do
-    name "MyString"
+    sequence :name, 10000 do |n|
+      "event_#{n}"
+    end
     destination "MyString"
     arrival_time { 2.days.from_now }
   end
