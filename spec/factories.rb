@@ -1,7 +1,4 @@
 FactoryGirl.define do
-  factory :event_planner do
-    # ??
-  end
   factory :event do
     name "MyString"
     destination "MyString"
@@ -19,7 +16,10 @@ FactoryGirl.define do
     sequence :username, 1000 do
       "username_#{n}"
     end
-    password { "abc123" }
-    password_confirmation { "abc123" }
+    factory :invitee
+    factory :event_planner do
+      password { "abc123" }
+      password_confirmation { "abc123" }
+    end
   end
 end

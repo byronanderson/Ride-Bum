@@ -1,1 +1,1 @@
-Visit <%= event_url(@invitation.event) %> to see the event
+Visit <%= event_url(@invitation.event, token: @invitation.user.authentication_token) %> to see the event

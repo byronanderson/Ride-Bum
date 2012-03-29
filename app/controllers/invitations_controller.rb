@@ -40,7 +40,9 @@ class InvitationsController < ApplicationController
   # POST /invitations
   # POST /invitations.json
   def create
-    @invitation = Invitation.new(params[:invitation])
+    user_attributes = params[:invitation][:user_attributes]
+    user = User.find_by_email(user_attributes[:email]) || User.new(user_attributes)
+    @invitation = Invitation.new(event_id: params[:invitation][:event_id], user: user)
 
     respond_to do |format|
       if @invitation.save

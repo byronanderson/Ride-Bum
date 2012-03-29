@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   devise :token_authenticatable, :database_authenticatable, :registerable,
     :recoverable, :rememberable, :trackable, :validatable
 
+  before_save :ensure_authentication_token
   # Setup accessible (or protected) attributes for your model
   attr_accessible :login, :username, :email, :password, :password_confirmation, :remember_me, :phone
   attr_accessor :login
