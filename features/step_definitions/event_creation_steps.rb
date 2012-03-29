@@ -1,7 +1,7 @@
 Given /^"([^"]*)" is an event planner$/ do |event_planner_name|
   # this is probably wrong, event planner might not be a separate model
   pass
-  #@user = Factory(:event_planner, name: event_planner_name)
+  #@user = FactoryGirl(:event_planner, name: event_planner_name)
 end
 
 Given /^he is logged in$/ do
