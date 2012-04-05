@@ -6,6 +6,7 @@ gem 'devise'
 gem 'jquery-rails'
 gem 'anjlab-bootstrap-rails', '>= 2.0', :require => 'bootstrap-rails'
 gem "draper"
+gem 'cancan'
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

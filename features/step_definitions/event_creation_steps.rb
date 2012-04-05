@@ -9,6 +9,19 @@ Given /^he is logged in$/ do
   #log_in(@user)
 end
 
+Given /^he is not logged in$/ do
+  visit destroy_user_session_path
+end
+
+When /^he goes to his dashboard page$/ do
+  visit dashboard_path
+end
+
+Then /^he is redirected to the login page$/ do
+  page.current_path.should == new_user_session_path
+  
+end
+
 Given /^he is on his dashboard page$/ do
   visit dashboard_path
 end
